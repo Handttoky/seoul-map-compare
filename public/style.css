@@ -1,0 +1,169 @@
+/* ▼ 검색창, 지도, 버튼, 헤더 스타일 (기존 유지) */
+#search-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search-input {
+  width: 70%;
+  padding: 10px;
+  border: 2px solid #729762;
+  border-radius: 4px;
+}
+
+#search-button {
+  width: 30%;
+  padding: 10px;
+  border: none;
+  background-color: #729762;
+  color: #e7f0dc;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#map {
+  width: 100%;
+  height: 600px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+}
+
+#opacitySlider {
+  width: 300px;
+  margin: 20px auto;
+  display: block;
+}
+
+#buttons {
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.year-button {
+  padding: 10px 40px;
+  background-color: #e7f0dc;
+  border: 2px solid #808D7C;
+  cursor: pointer;
+}
+
+.source {
+  display: flex;
+  background: #ffffff;
+  padding: 30px;
+}
+.source > div:first-child {
+  flex: 3;
+  text-align: center;
+  color: #808D7C;
+}
+.source > div:last-child {
+  flex: 9;
+  color: #808D7C;
+}
+
+.footer {
+  display: flex;
+  background: #5F6F65;
+  padding: 30px;
+}
+.footer > div:first-child {
+  flex: 3;
+  text-align: center;
+  color: #fff;
+}
+.footer > div:last-child {
+  flex: 9;
+  color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+.logo .circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 70%;
+  background-color: #5F6F65;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo .circle span {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.title {
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #5F6F65;
+}
+
+/* ▼ 로그인 패널 & 즐겨찾기 패널 (드래그 가능) */
+.login-panel,
+.favorites-panel {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  width: 250px;
+  background-color: #fefefe;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  z-index: 999; 
+  cursor: move; /* 드래그 시 마우스 포인터 */
+}
+
+/* 로그인/즐겨찾기 패널 내부 구분 */
+.login-panel h3, 
+.favorites-panel h3, 
+.favorites-panel h4 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.login-panel input,
+.favorites-panel input {
+  width: 90%;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+/* 즐겨찾기 목록 스타일 */
+#favorites-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+#favorites-list li {
+  margin: 5px 0;
+  cursor: pointer;
+  background: #f7f7f7;
+  padding: 5px;
+}
+
+#favorites-list li:hover {
+  background: #e7e7e7;
+}

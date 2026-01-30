@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>서울 과거 지도 비교</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <div class="circle">
+          <span>CPPA</span>
+        </div>
+      </div>
+      <div class="title">
+        Collaboration Project between Programmers and Architects to Create Historical Maps
+      </div>
+    </div>
+  </header>
+
+  <!-- 검색 영역 -->
+  <div id="search-container">
+    <input id="search-input" type="text" placeholder="장소를 입력하세요">
+    <button id="search-button">검색</button>
+  </div>
+
+  <!-- 지도 영역 -->
+  <div id="map"></div>
+
+  <!-- 연도별 지도 토글 버튼 -->
+  <div id="buttons">
+    <div class="year-button" onclick="toggle1963()">1963년</div>
+    <div class="year-button" onclick="toggle1969()">1969년</div>
+    <div class="year-button" onclick="toggle1975()">1975년</div>
+  </div>
+
+  <!-- 투명도 슬라이더 -->
+  <input type="range" id="opacitySlider" min="0" max="1" step="0.1" value="1">
+
+  <!-- (A) 회원가입/로그인 패널 (처음에만 보임) -->
+  <div class="login-panel draggable" id="loginPanel">
+    <h3>회원가입</h3>
+    <input type="email" id="reg-email" placeholder="이메일">
+    <input type="password" id="reg-password" placeholder="비밀번호">
+    <input type="text" id="reg-name" placeholder="이름">
+    <button onclick="registerUser()">회원가입</button>
+
+    <h3>로그인</h3>
+    <input type="email" id="login-email" placeholder="이메일">
+    <input type="password" id="login-password" placeholder="비밀번호">
+    <button onclick="loginUser()">로그인</button>
+  </div>
+
+  <!-- (B) 즐겨찾기 패널 (처음에 display:none) -->
+  <div class="favorites-panel draggable" id="favoritesPanel" style="display:none;">
+    <h3>즐겨찾기 목록</h3>
+    <ul id="favorites-list"></ul>
+    <h4>즐겨찾기 등록</h4>
+    <input type="text" id="fav-title" placeholder="장소명">
+    <button onclick="addFavorite()">추가</button>
+    <!-- 로그아웃 버튼 -->
+    <button onclick="logoutUser()">로그아웃</button>
+  </div>
+
+  <!-- 구글 지도 + Places 라이브러리 (자동완성 위해 libraries=places) -->
+  <script 
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap"
+    async defer>
+  </script>
+
+  <!-- 커스텀 JS -->
+  <script src="script.js"></script>
+
+  <div class="source">
+    <div>Source</div>
+    <div>
+      〈서울시도시계획가로망도〉, 《No.45002081-002120》, 1963.12.31., 서울특별시 도시계획국 시설계획과 <br>
+      〈서울특별시기본계획 가로망도〉, 《No.4(도로)000123-000158》, 1969.12.31., 서울특별시 도시계획국 시설계획과 <br>
+      〈도시고속철도(지하철순환선및지하철3.4호선)시설결정요청〉, 《고속철도-서고108(75.6.23),서고169(75.10.18),서고194(75.11.28), <br>
+      건고203(75.12.20),건고232(77.12.1),서고107(74.8.1)》, 1975.06.11., 서울특별시 도시계획국 시설계획과<br>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>About Us</div>
+    <div>
+      ChanYoung. Park, Jeonnam University.kr <br>
+      DaHyun. Kim, Kagoshima University.jp <br>
+      Collaboration Project between Programmers and Architects to Create Historical Maps <br>
+    </div>
+  </div>
+</body>
+</html>
